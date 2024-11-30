@@ -1,0 +1,185 @@
+.filterContainer {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.loc {
+    width: 360px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    position: relative;
+}
+
+.locTitle {
+    color: var(--Gray, #6C717B);
+    line-height: 1.5;
+}
+
+.locInput {
+    height: 56px;
+    display: flex;
+    gap: 8px;
+    padding-left: 46px;
+    color: var(--Main, #101828);
+    border-radius: 12px;
+    background-color: var(--Inputs, #F7F7F7);
+    outline: none;
+    border: none;
+    line-height: 1.5;
+}
+
+input::placeholder {
+    color: rgba(108, 113, 123, 1);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.map {
+    position: absolute;
+    top: 51px;
+    left: 18px;
+    pointer-events: none;
+    stroke: #6c717b;
+    stroke-width: 0.2px;
+    opacity: 0.5;
+    transition: border 0.4s ease;
+}
+
+.activeMap {
+    stroke: #101828;
+    opacity: 1;
+}
+
+.suggestionsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #fff;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
+
+.suggestionItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.suggestionItem:hover {
+    background-color: #f0f0f0;
+}
+
+.filters {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+.filtersTitle {
+    color: var(--Text, #475467);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.filterBlock {}
+
+.filterBlock label {
+    color: var(--Main, #101828);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.filterLine {
+    height: 1px;
+    margin: 24px 0;
+    background-color: var(--Gray-light, #DADDE1);
+}
+
+.filterButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filterButton {
+    display: flex;
+    flex-direction: column;
+    width: 112px;
+    height: 96px;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--Gray-light, #DADDE1);
+    mix-blend-mode: multiply;
+    transition: border 0.3s ease;
+}
+
+.filterButton:hover {
+    border: 1px solid var(--Button, #E44848);
+}
+
+.filterButton.active {
+    border: 1px solid var(--Button, #E44848);
+}
+
+.searchButtons {
+    display: flex;
+    gap: 12px;
+}
+
+.searchButton {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    display: flex;
+    width: 166px;
+    padding: 16px 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    background-color: #E44848;
+    transition: background-color 0.4s ease;
+    border: none;
+}
+
+.searchButton:hover {
+    background-color: #D84343;
+}
+
+.resetButton {
+    color: #101828;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    display: flex;
+    width: 166px;
+    padding: 16px 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    border: 1px solid var(--Gray-light, #DADDE1);
+    transition: border 0.4s ease;
+
+}
+
+.resetButton:hover {
+    border: 1px solid var(--Button, #E44848);
+}

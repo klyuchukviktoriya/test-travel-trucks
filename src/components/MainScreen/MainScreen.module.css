@@ -1,0 +1,42 @@
+.mainScreen {
+    background-image: url('../../assets/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 260px 64px;
+    color: #F7F7F7;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 0.66;
+    margin-bottom: 16px;
+}
+
+.titleText {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    margin-bottom: 40px;
+}
+
+.titleButton {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    display: flex;
+    width: 173px;
+    padding: 16px 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    background-color: #E44848;
+    transition: background-color 0.4s ease;
+    border: none;
+}
+
+.titleButton:hover {
+    background-color: #D84343;
+}

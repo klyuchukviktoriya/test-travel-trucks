@@ -1,0 +1,26 @@
+.trucks {
+    width: 888px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.loadMoreButton {
+    color: #101828;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    border: 1px solid var(--Gray-light, #DADDE1);
+    transition: border 0.4s ease;
+    margin-top: 40px;
+}
+
+.loadMoreButton:hover {
+    border: 1px solid var(--Button, #E44848);
+}

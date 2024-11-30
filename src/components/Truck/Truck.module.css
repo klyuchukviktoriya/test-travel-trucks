@@ -1,0 +1,43 @@
+.truck {
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    border-radius: 20px;
+    border: 1px solid #DADDE1;
+    background-color: #FFF;
+}
+
+.truckImg {
+    border-radius: 10px;
+
+    width: 292px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.truckInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.truckButton {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    display: flex;
+    width: 166px;
+    padding: 16px 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    background-color: #E44848;
+    transition: background-color 0.4s ease;
+    border: none;
+}
+
+.truckButton:hover {
+    background-color: #D84343;
+}
