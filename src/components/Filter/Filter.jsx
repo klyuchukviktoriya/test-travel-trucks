@@ -70,14 +70,24 @@ export default function Filter({ onApplyFilters }) {
   };
 
   const handleApplyFilters = () => {
+    const originalLocation = location
+      ? location
+          .split(",")
+          .map(part => part.trim())
+          .reverse()
+          .join(", ")
+      : undefined;
+
     const filters = {
-      location,
+      location: originalLocation,
       vehicleType,
       transmission: equipment.transmission ? "automatic" : undefined,
       equipment: Object.keys(equipment).filter(
         key => equipment[key] && key !== "transmission"
       ),
     };
+
+    console.log("Filters applied:", filters);
     onApplyFilters(filters);
   };
 

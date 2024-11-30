@@ -37,39 +37,68 @@ input::placeholder {
     line-height: 1.5;
 }
 
-.map {
+.map, .activeMap {
     position: absolute;
     top: 51px;
     left: 18px;
     pointer-events: none;
+    fill:#6c717b;
     stroke: #6c717b;
-    stroke-width: 0.2px;
-    opacity: 0.5;
+    stroke-width: 0.3;
+    /* opacity: 0.5; */
     transition: border 0.4s ease;
 }
 
 .activeMap {
+    fill:#101828;
     stroke: #101828;
     opacity: 1;
 }
 
 .suggestionsList {
     list-style: none;
-    padding: 0;
+    padding: 4px;
     margin: 0;
     border: 1px solid #ccc;
     max-height: 200px;
     overflow-y: auto;
     background: #fff;
     position: absolute;
+    left: 30px;
+    top: 88px;
     z-index: 1000;
-    width: 100%;
+    width: 280px;
+    border: solid 1px #E44848;
+    border-radius: 8px;
 }
+  
+  .suggestionsList::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .suggestionsList::-webkit-scrollbar-track {
+    margin: 3px;
+    background: transparent;
+  }
+  
+  .suggestionsList::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175);
+    border-radius: 10px;
+  }
+  
+  .suggestionsList::-webkit-scrollbar-thumb:hover {
+    background: grey;
+  }
+  
+  .suggestionsList::-webkit-scrollbar-button {
+    display: none;
+  }
 
 .suggestionItem {
     padding: 10px;
     cursor: pointer;
-    transition: background-color 0.4s;
+    transition: background-color 0.2s;
+    border-radius: 8px;
 }
 
 .suggestionItem:hover {
@@ -91,7 +120,7 @@ input::placeholder {
     line-height: 1.5;
 }
 
-.filterBlock {}
+/* .filterBlock {} */
 
 .filterBlock label {
     color: var(--Main, #101828);
@@ -135,6 +164,11 @@ input::placeholder {
 
 .filterButton.active {
     border: 1px solid var(--Button, #E44848);
+}
+
+.filterButton svg {
+    width: 32px;
+    height: 32px;
 }
 
 .searchButtons {

@@ -1,80 +1,78 @@
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
 import css from "./Truck.module.css";
+import sprite from "../../assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavorites } from "../../redux/campers/selectors.js";
 import { toggleFavorite } from "../../redux/campers/slice.js";
-import sprite from "../../assets/sprite.svg";
+import { NavLink } from "react-router-dom";
+import Features from "../Features/Features.jsx";
+
 export default function Truck({ truck }) {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
 
   const isFavorite = favorites.includes(truck.id);
+
   const handleFavoriteClick = () => {
     dispatch(toggleFavorite(truck.id));
   };
 
-  const featureMapping = {
-    transmission: { label: "Automatic", icon: "icon-automatic" },
-    engine: { label: "Petrol", icon: "icon-petrol" },
-    AC: { label: "AC", icon: "icon-ac" },
-    bathroom: { label: "Bathroom", icon: "icon-bathroom" },
-    kitchen: { label: "Kitchen", icon: "icon-kitchen" },
-    TV: { label: "TV", icon: "icon-tv" },
-    radio: { label: "Radio", icon: "icon-radio" },
-    refrigerator: { label: "Refrigerator", icon: "icon-refrigerator" },
-    microwave: { label: "Microwave", icon: "icon-microwave" },
-    gas: { label: "Gas", icon: "icon-gas" },
-    water: { label: "Water", icon: "icon-water" },
+  const formatLocation = location => {
+    if (!location) return "";
+
+    const parts = location.split(",").map(part => part.trim());
+    if (parts.length === 2) {
+      return `${parts[1]}, ${parts[0]}`;
+    }
+    return location;
   };
 
-  const filteredFeatures = Object.entries(featureMapping).filter(
-    ([key]) => truck[key] === true || typeof truck[key] === "string"
-  );
+  const galleryImage = truck.gallery?.[0]?.thumb || "default-image-path.jpg";
 
   return (
     <div className={css.truck}>
-      <img
-        className={css.truckImg}
-        src={truck.gallery[0]?.thumb}
-        alt={truck.name}
-      />
+      <img className={css.truckImg} src={galleryImage} alt={truck.name} />
       <div className={css.truckInfo}>
-        <div className={css.truckTitle}>
-          <div className={css.truckTitle1}>
-            <h2>{truck.name}</h2>
-            <p>€{truck.price.toFixed(2)}</p>
-            <button
-              onClick={handleFavoriteClick}
-              className={css.favoriteButton}
-            >
-              {isFavorite ? "💖" : "🤍"}
-            </button>
-          </div>
-          <div className={css.truckTitle2}>
-            <p>{truck.rating} ⭐</p>
-            <p>{truck.location}</p>
-          </div>
-        </div>
-        <div className={css.truckText}>
-          <p>{truck.description}</p>
-        </div>
-        <div className={css.truckFilter}>
-          {filteredFeatures.map(([key, { label, icon }]) => (
-            <span key={key} className={css.feature}>
+        <div className={css.truckHead}>
+          <div className={css.truckHeadUp}>
+            <h2 className={css.truckTitle}>{truck.name}</h2>
+            <div className={css.truckTitleRight}>
+              <p className={css.truckPrice}>€{truck.price}</p>
+
               <svg
-                className={css.featureIcon}
-                width="20"
-                height="20"
-                fill="transparent"
-                stroke="#101828"
+                width="24"
+                height="24"
+                className={`${
+                  isFavorite ? css.favoriteActive : css.favoriteButton
+                }`}
+                onClick={handleFavoriteClick}
+                role="button"
+                aria-label="Like"
               >
-                <use href={`${sprite}#${icon}`} />
+                <use href={`${sprite}#icon-favorite`} />
               </svg>
-              {label}
-            </span>
-          ))}
+            </div>
+          </div>
+          <div className={css.truckHeadDown}>
+            <div className={css.truckDetails}>
+              <p className={css.truckStar}>
+                <svg width="16" height="16" fill="#FFC531">
+                  <use href={`${sprite}#icon-star`} />
+                </svg>{" "}
+                {truck.rating} ({truck.reviews.length} Reviews)
+              </p>
+              <p className={css.truckLoc}>
+                <svg width="16" height="16">
+                  <use href={`${sprite}#icon-map`} />
+                </svg>
+                {formatLocation(truck.location)}
+              </p>
+            </div>
+          </div>
         </div>
+        <p className={css.description}>{truck.description}</p>
+        <Features truck={truck} />
+
         <NavLink to={`/catalog/${truck.id}`}>
           <button className={css.truckButton}>Show more</button>
         </NavLink>
@@ -88,18 +86,21 @@ Truck.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    reviews: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
     location: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    transmission: PropTypes.string,
-    engine: PropTypes.string,
-    kitchen: PropTypes.bool,
-    AC: PropTypes.bool,
-    water: PropTypes.bool,
     gallery: PropTypes.arrayOf(
       PropTypes.shape({
         thumb: PropTypes.string.isRequired,
       })
     ).isRequired,
+    transmission: PropTypes.string,
+    engine: PropTypes.string,
+    AC: PropTypes.bool,
+    kitchen: PropTypes.bool,
+    TV: PropTypes.bool,
+    bathroom: PropTypes.bool,
+    water: PropTypes.bool,
   }).isRequired,
 };
