@@ -1,11 +1,3 @@
-.mainScreen {
-  background-image: url("../../assets/bg-home.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 260px 64px;
-  color: #f7f7f7;
-}
-
 .title {
   font-size: 48px;
   font-weight: 600;
