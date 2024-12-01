@@ -1,49 +1,48 @@
 .truck {
-    display: flex;
-    padding: 24px;
-    gap: 24px;
-    border-radius: 20px;
-    border: 1px solid #dadde1;
-    background-color: #fff;
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+  border-radius: 20px;
+  border: 1px solid #dadde1;
+  background-color: #fff;
 }
 
 .truckImg {
-    border-radius: 10px;
-    width: 292px;
-    /* height: 320px; */
-    object-fit: cover;
+  border-radius: 10px;
+  width: 292px;
+  object-fit: cover;
 }
 
 .truckInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .truckHead {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .truckHeadUp {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .truckTitle,
 .truckPrice {
-    color: var(--Main, #101828);
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.33;
+  color: var(--Main, #101828);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
 }
 
 .truckTitleRight {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /* .truckPrice {
@@ -52,60 +51,95 @@
 
 .favoriteButton,
 .favoriteActive {
-    margin-left: 12px;
-    height: 24px;
-    flex: 1 0 0;
-    fill: #101828;
-    stroke: #101828;
-    stroke-width: 0.1;
+  margin-left: 12px;
+  height: 24px;
+  flex: 1 0 0;
+  fill: #101828;
+  stroke: #101828;
+  stroke-width: 0.1;
 }
 
 .favoriteActive {
-    fill: #e44848;
-    stroke: #e44848;
-}
-
-.truckDetails {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
-.truckLoc,
-.truckStar {
-    display: flex;
-    gap: 4px;
-    align-items: center;
+  fill: #e44848;
+  stroke: #e44848;
 }
 
 .description {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: var(--Text, #475467);
-    text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--Text, #475467);
+  text-overflow: ellipsis;
 }
 
 .truckButton {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.005em;
-    display: flex;
-    width: 166px;
-    padding: 16px 40px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 200px;
-    background-color: #e44848;
-    transition: background-color 0.4s ease;
-    border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  display: flex;
+  width: 166px;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+  background-color: #e44848;
+  transition: background-color 0.4s ease;
+  border: none;
 }
 
 .truckButton:hover {
-    background-color: #d84343;
+  background-color: #d84343;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.detailsPage {
+  padding: 48px 64px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 60px;
+}
+.detailsHead {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.highlight {
+  background-color: red;
+}
+
+.detailsGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.detailsImg {
+  border-radius: 10px;
+  max-width: 400px;
+  height: 320px;
+  object-fit: cover;
+  background-color: antiquewhite;
+}
+
+.detailDescription {
+  color: var(--Text, #475467);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
 }

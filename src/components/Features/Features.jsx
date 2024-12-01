@@ -4,6 +4,7 @@ import {
   equipmentLabelsTruck,
 } from "../../constants/filter.jsx";
 import css from "./Features.module.css";
+import { truckPropTypes } from "../../constants/propTypes.js";
 
 export default function Features({ truck }) {
   const fuelFeature =
@@ -32,15 +33,5 @@ export default function Features({ truck }) {
 }
 
 Features.propTypes = {
-  truck: PropTypes.shape({
-    engine: PropTypes.string,
-    AC: PropTypes.bool,
-    kitchen: PropTypes.bool,
-    TV: PropTypes.bool,
-    bathroom: PropTypes.bool,
-    water: PropTypes.bool,
-    radio: PropTypes.bool,
-    microwave: PropTypes.bool,
-    refrigerator: PropTypes.bool,
-  }).isRequired,
+  truck: PropTypes.shape(truckPropTypes).isRequired,
 };

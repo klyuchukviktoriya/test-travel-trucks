@@ -1,0 +1,65 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 631px;
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 16px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 60px;
+  background: var(--Badges, #f2f4f7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarLetter {
+  color: var(--Button, #e44848);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+/* .reviewContent {
+} */
+
+.reviewHeader {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.author {
+  color: var(--Main, #101828);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.comment {
+  color: var(--Text, #475467);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}

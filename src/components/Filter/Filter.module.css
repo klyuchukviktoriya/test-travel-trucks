@@ -1,219 +1,220 @@
 .filterContainer {
-    width: 360px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .loc {
-    width: 360px;
-    display: flex;
-    gap: 8px;
-    flex-direction: column;
-    position: relative;
+  width: 360px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  position: relative;
 }
 
 .locTitle {
-    color: var(--Gray, #6C717B);
-    line-height: 1.5;
+  color: var(--Gray, #6c717b);
+  line-height: 1.5;
 }
 
 .locInput {
-    height: 56px;
-    display: flex;
-    gap: 8px;
-    padding-left: 46px;
-    color: var(--Main, #101828);
-    border-radius: 12px;
-    background-color: var(--Inputs, #F7F7F7);
-    outline: none;
-    border: none;
-    line-height: 1.5;
+  height: 56px;
+  display: flex;
+  gap: 8px;
+  padding-left: 46px;
+  color: var(--Main, #101828);
+  border-radius: 12px;
+  background-color: var(--Inputs, #f7f7f7);
+  outline: none;
+  font-size: 16px;
+  border: none;
+  line-height: 1.5;
 }
 
 input::placeholder {
-    color: rgba(108, 113, 123, 1);
-    font-size: 16px;
-    line-height: 1.5;
+  color: rgba(108, 113, 123, 1);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-.map, .activeMap {
-    position: absolute;
-    top: 51px;
-    left: 18px;
-    pointer-events: none;
-    fill:#6c717b;
-    stroke: #6c717b;
-    stroke-width: 0.3;
-    /* opacity: 0.5; */
-    transition: border 0.4s ease;
+.map,
+.activeMap {
+  position: absolute;
+  top: 51px;
+  left: 18px;
+  pointer-events: none;
+  fill: #6c717b;
+  stroke: #6c717b;
+  stroke-width: 0.3;
+  /* opacity: 0.5; */
+  transition: border 0.4s ease;
 }
 
 .activeMap {
-    fill:#101828;
-    stroke: #101828;
-    opacity: 1;
+  fill: #101828;
+  stroke: #101828;
+  opacity: 1;
 }
 
 .suggestionsList {
-    list-style: none;
-    padding: 4px;
-    margin: 0;
-    border: 1px solid #ccc;
-    max-height: 200px;
-    overflow-y: auto;
-    background: #fff;
-    position: absolute;
-    left: 30px;
-    top: 88px;
-    z-index: 1000;
-    width: 280px;
-    border: solid 1px #E44848;
-    border-radius: 8px;
+  list-style: none;
+  padding: 4px;
+  margin: 0;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  position: absolute;
+  left: 30px;
+  top: 88px;
+  z-index: 1000;
+  width: 280px;
+  border: solid 1px #e44848;
+  border-radius: 8px;
 }
-  
-  .suggestionsList::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  .suggestionsList::-webkit-scrollbar-track {
-    margin: 3px;
-    background: transparent;
-  }
-  
-  .suggestionsList::-webkit-scrollbar-thumb {
-    background: rgb(175, 175, 175);
-    border-radius: 10px;
-  }
-  
-  .suggestionsList::-webkit-scrollbar-thumb:hover {
-    background: grey;
-  }
-  
-  .suggestionsList::-webkit-scrollbar-button {
-    display: none;
-  }
+
+.suggestionsList::-webkit-scrollbar {
+  width: 5px;
+}
+
+.suggestionsList::-webkit-scrollbar-track {
+  margin: 3px;
+  background: transparent;
+}
+
+.suggestionsList::-webkit-scrollbar-thumb {
+  background: rgb(175, 175, 175);
+  border-radius: 10px;
+}
+
+.suggestionsList::-webkit-scrollbar-thumb:hover {
+  background: grey;
+}
+
+.suggestionsList::-webkit-scrollbar-button {
+  display: none;
+}
 
 .suggestionItem {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 8px;
 }
 
 .suggestionItem:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .filters {
-    display: flex;
-    gap: 32px;
-    flex-direction: column;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
 }
 
 .filtersTitle {
-    color: var(--Text, #475467);
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.5;
+  color: var(--Text, #475467);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 /* .filterBlock {} */
 
 .filterBlock label {
-    color: var(--Main, #101828);
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.2;
+  color: var(--Main, #101828);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .filterLine {
-    height: 1px;
-    margin: 24px 0;
-    background-color: var(--Gray-light, #DADDE1);
+  height: 1px;
+  margin: 24px 0;
+  background-color: var(--Gray-light, #dadde1);
 }
 
 .filterButtons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .filterButton {
-    display: flex;
-    flex-direction: column;
-    width: 112px;
-    height: 96px;
-    background-color: transparent;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 10px;
-    border: 1px solid var(--Gray-light, #DADDE1);
-    mix-blend-mode: multiply;
-    transition: border 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 112px;
+  height: 96px;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--Gray-light, #dadde1);
+  mix-blend-mode: multiply;
+  transition: border 0.3s ease;
 }
 
 .filterButton:hover {
-    border: 1px solid var(--Button, #E44848);
+  border: 1px solid var(--Button, #e44848);
 }
 
 .filterButton.active {
-    border: 1px solid var(--Button, #E44848);
+  border: 1px solid var(--Button, #e44848);
 }
 
 .filterButton svg {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .searchButtons {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .searchButton {
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.005em;
-    display: flex;
-    width: 166px;
-    padding: 16px 40px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 200px;
-    background-color: #E44848;
-    transition: background-color 0.4s ease;
-    border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  display: flex;
+  width: 166px;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+  background-color: #e44848;
+  transition: background-color 0.4s ease;
+  border: none;
 }
 
 .searchButton:hover {
-    background-color: #D84343;
+  background-color: #d84343;
 }
 
 .resetButton {
-    color: #101828;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.005em;
-    display: flex;
-    width: 166px;
-    padding: 16px 40px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 200px;
-    border: 1px solid var(--Gray-light, #DADDE1);
-    transition: border 0.4s ease;
-
+  color: #101828;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  display: flex;
+  width: 166px;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+  border: 1px solid var(--Gray-light, #dadde1);
+  transition: border 0.4s ease;
 }
 
 .resetButton:hover {
-    border: 1px solid var(--Button, #E44848);
+  border: 1px solid var(--Button, #e44848);
 }

@@ -9,7 +9,6 @@ export default function MainScreen() {
         You can find everything you want in our catalog
       </h2>
       <NavLink to="/catalog">
-        {" "}
         <button className={css.titleButton}>View Now</button>
       </NavLink>
     </div>
