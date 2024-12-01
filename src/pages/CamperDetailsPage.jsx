@@ -29,7 +29,7 @@ export default function CamperDetailsPage() {
             <h2 className={css.truckTitle}>{truck.name}</h2>
             <RaitingLocation truck={truck} highlightReviews={true} />
           </div>
-          <p className={css.truckPrice}>€{truck.price}</p>
+          <p className={css.truckPrice}>€{truck.price.toFixed(2)}</p>
         </div>
 
         <div className={css.detailsGallery}>

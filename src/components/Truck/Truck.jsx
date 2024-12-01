@@ -29,7 +29,7 @@ export default function Truck({ truck }) {
           <div className={css.truckHeadUp}>
             <h2 className={css.truckTitle}>{truck.name}</h2>
             <div className={css.truckTitleRight}>
-              <p className={css.truckPrice}>€{truck.price}</p>
+              <p className={css.truckPrice}>€{truck.price.toFixed(2)}</p>
 
               <svg
                 width="24"
