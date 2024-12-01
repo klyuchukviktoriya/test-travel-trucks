@@ -2,12 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Layout from "./components/Layout/Layout.jsx";
 import "./App.css";
-import FeaturesBlock from "./components/FeaturesBlock/FeaturesBlock.jsx";
 
 const HomePage = lazy(() => import("./pages/HomePage.jsx"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage.jsx"));
 const CamperDetailsPage = lazy(() => import("./pages/CamperDetailsPage.jsx"));
-const Reviews = lazy(() => import("./components/Reviews/Reviews.jsx"));
 
 export default function App() {
   return (
@@ -17,10 +15,7 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />
-            <Route path="/catalog/:id" element={<CamperDetailsPage />}>
-              <Route path="features" element={<FeaturesBlock />} />
-              <Route path="reviews" element={<Reviews />} />
-            </Route>
+            <Route path="/catalog/:id" element={<CamperDetailsPage />} />
           </Route>
           <Route path="*" element={<HomePage />} />
         </Routes>
@@ -28,3 +23,4 @@ export default function App() {
     </Router>
   );
 }
+
