@@ -17,20 +17,14 @@ export const fetchCampers = createAsyncThunk(
         }, {}),
       };
 
-      console.log("Filters applied:", params);
-
       const response = await axios.get(API_URL, { params });
 
-      console.log("API response:", response.data);
-
       if (!response.data.items || response.data.items.length === 0) {
-        console.log("No campers found for the given filters.");
         return [];
       }
 
       return response.data.items;
     } catch (error) {
-      console.error("Error fetching campers:", error.message);
       return rejectWithValue(error.response?.data || "Error fetching campers");
     }
   }

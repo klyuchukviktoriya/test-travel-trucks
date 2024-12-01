@@ -13,11 +13,9 @@ export default function CamperDetailsPage() {
   const truck = useSelector(selectCamperDetails);
 
   useEffect(() => {
-    console.log("Fetching camper details for ID:", id);
     dispatch(fetchCamperDetails(id));
   }, [dispatch, id]);
 
-  console.log("Truck details:", truck);
 
   if (!truck) {
     return <p>Loading...</p>;

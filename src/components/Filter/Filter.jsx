@@ -87,7 +87,6 @@ export default function Filter({ onApplyFilters }) {
       ),
     };
 
-    console.log("Filters applied:", filters);
     onApplyFilters(filters);
   };
 
