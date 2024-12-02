@@ -6,6 +6,7 @@ import css from "../components/Truck/Truck.module.css";
 import { selectCamperDetails } from "../redux/campers/selectors.js";
 import DetailsInfo from "../components/DetailsInfo/DetailsInfo.jsx";
 import RaitingLocation from "../components/RaitingLocation/RaitingLocation.jsx";
+import Loader from "../components/Loader/Loader.jsx";
 
 export default function CamperDetailsPage() {
   const { id } = useParams();
@@ -18,7 +19,7 @@ export default function CamperDetailsPage() {
 
 
   if (!truck) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   return (

@@ -11,6 +11,7 @@ import Filter from "../components/Filter/Filter.jsx";
 import TruckList from "../components/TruckList/TruckList.jsx";
 import { useEffect } from "react";
 import css from "./CatalogPage.module.css";
+import Loader from "../components/Loader/Loader.jsx";
 export default function CatalogPage() {
   const dispatch = useDispatch();
   const campers = useSelector(selectCampers);
@@ -30,7 +31,7 @@ export default function CatalogPage() {
     <div className={css.catalog}>
       <Filter onApplyFilters={handleApplyFilters} />
       {loading ? (
-        <p>Loading...</p>
+        <Loader />
       ) : error ? (
         <p>Error loading campers: {error}</p>
       ) : (
