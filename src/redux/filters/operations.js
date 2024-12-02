@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const API_URL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers";
 
@@ -28,10 +29,9 @@ export const fetchLocations = async () => {
       throw new Error("Unexpected API response format.");
     }
   } catch (error) {
-    console.error("Error fetching locations from API:", {
-      message: error.message,
-      response: error.response?.data,
-    });
+    toast.error(
+      `Failed to fetch locations. ${error.response?.data?.message || "Please try again later."}`
+    );
     throw error;
   }
 };

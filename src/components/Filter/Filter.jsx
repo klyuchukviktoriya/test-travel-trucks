@@ -9,6 +9,7 @@ import {
   vehicleTypeLabels,
 } from "../../constants/filter.jsx";
 import sprite from "../../assets/sprite.svg";
+import { toast } from "react-toastify";
 
 export default function Filter({ onApplyFilters }) {
   const [location, setLocation] = useState("");
@@ -32,7 +33,11 @@ export default function Filter({ onApplyFilters }) {
         setLocationSuggestions(locations);
         setFilteredLocations(locations);
       } catch (error) {
-        console.error("Error loading locations:", error);
+        toast.error(
+          `Failed to load locations. ${
+            error.response?.data?.message || "Please try again later."
+          }`
+        );
       }
     };
     loadLocations();
