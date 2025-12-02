@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import Features from "../Features/Features.jsx";
 import RaitingLocation from "../RaitingLocation/RaitingLocation.jsx";
 import { truckPropTypes } from "../../constants/propTypes.js";
+import Button from "../../common/Button/Button.jsx";
 
 export default function Truck({ truck }) {
   const dispatch = useDispatch();
@@ -34,9 +35,8 @@ export default function Truck({ truck }) {
               <svg
                 width="24"
                 height="24"
-                className={`${
-                  isFavorite ? css.favoriteActive : css.favoriteButton
-                }`}
+                className={`${isFavorite ? css.favoriteActive : css.favoriteButton
+                  }`}
                 onClick={handleFavoriteClick}
                 role="button"
                 aria-label="Like"
@@ -53,7 +53,7 @@ export default function Truck({ truck }) {
         <Features truck={truck} />
 
         <NavLink to={`/catalog/${truck.id}`}>
-          <button className={css.truckButton}>Show more</button>
+          <Button className={css.truckButton}>Show more</Button>
         </NavLink>
       </div>
     </div>

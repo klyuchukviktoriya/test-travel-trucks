@@ -3,7 +3,7 @@ import {
   equipmentIconsTruck,
   equipmentLabelsTruck,
 } from "../../constants/filter.jsx";
-import css from "./Features.module.css";
+import css from "./Features.module.scss";
 import { truckPropTypes } from "../../constants/propTypes.js";
 
 export default function Features({ truck }) {
@@ -18,9 +18,11 @@ export default function Features({ truck }) {
   const features = Object.keys(equipmentLabelsTruck)
     .filter(key => truck[key])
     .map(key => (
-      <div key={key} className={css.iconLabelContainer}>
+      <div key={key} className={css.feature__item}>
         {equipmentIconsTruck[key]}
-        <span className={css.featureLabel}>{equipmentLabelsTruck[key]}</span>
+        <span className={css.feature__item_label}>
+          {equipmentLabelsTruck[key]}
+        </span>
       </div>
     ));
 

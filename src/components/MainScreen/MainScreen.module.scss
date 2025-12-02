@@ -1,0 +1,29 @@
+ @use "../../common/styles/utils/index" as *;
+
+ .main {
+   margin: 40px 0;
+   width: 100%;
+   color: #f7f7f7;
+   background-image: url("../../assets/bg-home.jpg");
+   background-size: cover;
+   background-position: center;
+   padding: 260px 64px;
+
+   h1 {
+     font-size: 48px;
+     font-weight: 600;
+     line-height: 0.66;
+     margin-bottom: 16px;
+   }
+
+   p {
+     font-size: 24px;
+     font-weight: 600;
+     line-height: 1.33;
+     margin-bottom: 40px;
+   }
+
+   &__btn {
+     @include btn;
+   }
+ }

@@ -12,7 +12,7 @@ export default function Reviews({ reviews }) {
           key={i}
           width="16"
           height="16"
-          fill={i <= clampedRating ? "#FFC531" : "#E0E0E0"}
+          fill={i <= clampedRating ? "#e78646" : "#f4ede4"}
           className={css.star}
         >
           <use href={`${sprite}#icon-star`} />

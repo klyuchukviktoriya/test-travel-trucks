@@ -1,0 +1,180 @@
+@import url("react-datepicker/dist/react-datepicker.css");
+:root {
+  --dark: #121212;
+  --light: #f4ede4;
+  --brown: #6e3819;
+  --orange: #e78646;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/roboto-v49-cyrillic_latin-300.woff2") format("woff2"), url("../fonts/roboto-v49-cyrillic_latin-300.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/roboto-v49-cyrillic_latin-600.woff2") format("woff2"), url("../fonts/roboto-v49-cyrillic_latin-600.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/roboto-v49-cyrillic_latin-900.woff2") format("woff2"), url("../fonts/roboto-v49-cyrillic_latin-900.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v49-cyrillic_latin-regular.woff2") format("woff2"), url("../fonts/roboto-v49-cyrillic_latin-regular.woff") format("woff");
+}
+.error__message {
+  color: var(--accent);
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--brown);
+}
+
+.myCustomDatepickerPopper {
+  font-family: Roboto, sans-serif;
+}
+
+.myCustomDatepickerPopper .react-datepicker {
+  border-radius: 12px;
+  border: 1px solid var(--brown);
+  background-color: var(--light);
+  z-index: 1000;
+  position: absolute;
+}
+
+.myCustomDatepickerPopper .myCustomDatepickerPopper,
+.myCustomDatepickerPopper .react-datepicker__header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--brown);
+}
+
+.myCustomDatepickerPopper .react-datepicker__current-month h2 {
+  color: var(--dark);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.myCustomDatepickerPopper .react-datepicker__day-name {
+  color: var(--brown);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.myCustomDatepickerPopper .react-datepicker__day,
+.react-datepicker__month-text,
+.react-datepicker__quarter-text,
+.react-datepicker__year-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.myCustomDatepickerPopper .react-datepicker__day--disabled,
+.react-datepicker__month-text--disabled,
+.react-datepicker__quarter-text--disabled,
+.react-datepicker__year-text--disabled {
+  color: var(--brown);
+  opacity: 0.3;
+  background: transparent;
+}
+
+.myCustomDatepickerPopper .react-datepicker__day:not([aria-disabled=true]):hover {
+  background-color: var(--brown);
+  border-radius: 40%;
+  color: var(--light);
+  text-align: center;
+}
+
+.myCustomDatepickerPopper .react-datepicker__day--selected {
+  background-color: var(--brown);
+  color: var(--light);
+  border-radius: 40%;
+}
+
+.myCustomDatepickerPopper .react-datepicker__triangle {
+  display: none;
+}
+
+.main {
+  margin: 40px 0;
+  width: 100%;
+  color: #f7f7f7;
+  background-image: url("../../assets/bg-home.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 260px 64px;
+}
+.main h1 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 0.66;
+  margin-bottom: 16px;
+}
+.main p {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 40px;
+}
+.main__btn {
+  color: var(--light);
+  background-color: var(--brown);
+  font-weight: 600;
+  font-size: 20px;
+  width: 166px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.main__btn:after {
+  background: var(--light);
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: 1;
+}
+.main__btn:hover:after {
+  left: 120%;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}/*# sourceMappingURL=MainScreen.module.css.map */

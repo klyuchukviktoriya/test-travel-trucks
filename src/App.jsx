@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Layout from "./components/Layout/Layout.jsx";
-import "./App.css";
+// import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./components/Loader/Loader.jsx";
 import { ToastContainer } from "react-toastify";

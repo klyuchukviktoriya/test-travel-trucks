@@ -1,5 +1,5 @@
 import { useState } from "react";
-import css from "./DetailsInfo.module.css";
+import css from "./DetailsInfo.module.scss";
 import Reviews from "../Reviews/Reviews.jsx";
 import FeaturesBlock from "../FeaturesBlock/FeaturesBlock.jsx";
 import Booking from "../Booking/Booking.jsx";
@@ -25,18 +25,18 @@ export default function DetailsInfo() {
 
   return (
     <div className={css.detailsInfo}>
-      <nav className={css.detailsNav}>
+      <nav className={css.detailsInfo__nav}>
         <NavLink
-          className={`${css.navButton} ${
-            activeTab === "features" ? css.activeNavButton : ""
+          className={`${css.detailsInfo__nav_btn} ${
+            activeTab === "features" ? css.detailsInfo__nav_btnActive : ""
           }`}
           onClick={() => setActiveTab("features")}
         >
           Features
         </NavLink>
         <NavLink
-          className={`${css.navButton} ${
-            activeTab === "reviews" ? css.activeNavButton : ""
+          className={`${css.detailsInfo__nav_btn} ${
+            activeTab === "reviews" ? css.detailsInfo__nav_btnActive : ""
           }`}
           onClick={() => setActiveTab("reviews")}
         >
@@ -44,8 +44,8 @@ export default function DetailsInfo() {
         </NavLink>
       </nav>
 
-      <div className={css.detailsDiv}>
-        <div className={css.detailsContent}>{renderContent()}</div>
+      <div className={css.detailsInfo__div}>
+        <div>{renderContent()}</div>
         <Booking />
       </div>
     </div>

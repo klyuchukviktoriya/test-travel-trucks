@@ -4,8 +4,8 @@
   gap: 8px;
   width: 527px;
 }
-
-.iconLabelContainer {
+.feature__item {
+  width: -moz-fit-content;
   width: fit-content;
   padding: 12px 18px;
   display: flex;
@@ -15,8 +15,7 @@
   background: var(--Gray-100, #f2f4f7);
   mix-blend-mode: multiply;
 }
-
-.featureLabel {
+.feature__item_label {
   color: var(--Main, #101828);
   text-align: center;
   font-family: Inter;
@@ -25,8 +24,7 @@
   font-weight: 500;
   line-height: 1.25;
 }
-
 .feature svg {
   width: 20px;
   height: 20px;
-}
+}/*# sourceMappingURL=Features.module.css.map */

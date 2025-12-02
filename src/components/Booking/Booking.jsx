@@ -1,7 +1,8 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import css from "./Booking.module.css";
+import css from "./Booking.module.scss";
+import Button from "../../common/Button/Button";
 
 export default function Booking() {
   const [formData, setFormData] = useState({
@@ -57,14 +58,14 @@ export default function Booking() {
 
   return (
     <div className={css.booking}>
-      <h2 className={css.bookingTitle}>Book your campervan now</h2>
-      <p className={css.bookingText}>
+      <h2 className={css.booking__title}>Book your campervan now</h2>
+      <p className={css.booking__text}>
         Stay connected! We are always ready to help you.
       </p>
 
-      <form onSubmit={handleSubmit}>
+      <form className={css.booking__form} onSubmit={handleSubmit}>
         <input
-          className={css.input}
+          className={css.booking__form_input}
           type="text"
           name="name"
           placeholder="Name*"
@@ -72,10 +73,10 @@ export default function Booking() {
           onChange={handleChange}
           maxLength="50"
         />
-        {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
+        {errors.name && <p className={css.error__message}>{errors.name}</p>}
 
         <input
-          className={css.input}
+          className={css.booking__form_input}
           type="email"
           name="email"
           placeholder="Email*"
@@ -83,10 +84,10 @@ export default function Booking() {
           onChange={handleChange}
           maxLength="100"
         />
-        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+        {errors.email && <p className={css.error__message}>{errors.email}</p>}
 
         <DatePicker
-          className={css.inputDate}
+          className={`${css.booking__form_date} ${css.booking__form_input}`}
           selected={formData.bookingDate}
           onChange={handleDateChange}
           placeholderText="Booking date*"
@@ -97,38 +98,40 @@ export default function Booking() {
           popperPlacement="bottom-start"
         />
         {errors.bookingDate && (
-          <p style={{ color: "red" }}>{errors.bookingDate}</p>
+          <p className={css.error__message}>{errors.bookingDate}</p>
         )}
 
         <textarea
-          className={css.input}
+          className={css.booking__form_input}
           name="comment"
           placeholder="Comment"
           value={formData.comment}
           onChange={handleChange}
           maxLength="200"
         />
-        {errors.comment && <p style={{ color: "red" }}>{errors.comment}</p>}
+        {errors.comment && (
+          <p className={css.error__message}>{errors.comment}</p>
+        )}
 
-        <button type="submit" className={css.formButton}>
+        <Button type="submit" className={css.booking__form_btn}>
           Submit
-        </button>
+        </Button>
       </form>
 
       {isModalVisible && (
         <div
-          className={css.modal}
+          className={css.booking__modal}
           onClick={e => {
             if (e.target === e.currentTarget) {
               setModalVisible(false);
             }
           }}
         >
-          <div className={css.modalContent}>
+          <div className={css.booking__modal_content}>
             <img
               src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXljeHpocjF2dWI5Zmc1MWNtNTB2NWlscmpidHdpY2ZpMm9qcjJ1YyZlcD12MV9naWZzX3RyZW5kaW5nJmN0PWc/R6gvnAxj2ISzJdbA63/giphy.gif"
               alt="Success"
-              className={css.modalGif}
+              className={css.booking__modal_gif}
             />
             <h3>Thank you!</h3>
             <p>

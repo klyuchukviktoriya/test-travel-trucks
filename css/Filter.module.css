@@ -1,8 +1,19 @@
-.filterContainer {
+.filter {
   width: 360px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+.filter__title {
+  color: var(--Gray, #6c717b);
+  line-height: 1.5;
+}
+.filter h3 {
+  color: var(--Main, #101828);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .loc {
@@ -12,13 +23,7 @@
   flex-direction: column;
   position: relative;
 }
-
-.locTitle {
-  color: var(--Gray, #6c717b);
-  line-height: 1.5;
-}
-
-.locInput {
+.loc__input {
   height: 56px;
   display: flex;
   gap: 8px;
@@ -31,15 +36,17 @@
   border: none;
   line-height: 1.5;
 }
-
-input::placeholder {
-  color: rgba(108, 113, 123, 1);
+.loc__input::-moz-placeholder {
+  color: rgb(108, 113, 123);
   font-size: 16px;
   line-height: 1.5;
 }
-
-.map,
-.activeMap {
+.loc__input::placeholder {
+  color: rgb(108, 113, 123);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.loc__map, .loc__activeMap {
   position: absolute;
   top: 51px;
   left: 18px;
@@ -50,14 +57,12 @@ input::placeholder {
   /* opacity: 0.5; */
   transition: border 0.4s ease;
 }
-
-.activeMap {
+.loc__activeMap {
   fill: #101828;
   stroke: #101828;
   opacity: 1;
 }
-
-.suggestionsList {
+.loc__suggestions {
   list-style: none;
   padding: 4px;
   margin: 0;
@@ -73,38 +78,31 @@ input::placeholder {
   border: solid 1px #e44848;
   border-radius: 8px;
 }
-
-.suggestionsList::-webkit-scrollbar {
-  width: 5px;
-}
-
-.suggestionsList::-webkit-scrollbar-track {
-  margin: 3px;
-  background: transparent;
-}
-
-.suggestionsList::-webkit-scrollbar-thumb {
-  background: rgb(175, 175, 175);
-  border-radius: 10px;
-}
-
-.suggestionsList::-webkit-scrollbar-thumb:hover {
-  background: grey;
-}
-
-.suggestionsList::-webkit-scrollbar-button {
-  display: none;
-}
-
-.suggestionItem {
+.loc__suggestions_item {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
   border-radius: 8px;
 }
-
-.suggestionItem:hover {
+.loc__suggestions_item:hover {
   background-color: #f0f0f0;
+}
+.loc__suggestions::-webkit-scrollbar {
+  width: 5px;
+}
+.loc__suggestions::-webkit-scrollbar-track {
+  margin: 3px;
+  background: transparent;
+}
+.loc__suggestions::-webkit-scrollbar-thumb {
+  background: rgb(175, 175, 175);
+  border-radius: 10px;
+}
+.loc__suggestions::-webkit-scrollbar-thumb:hover {
+  background: grey;
+}
+.loc__suggestions::-webkit-scrollbar-button {
+  display: none;
 }
 
 .filters {
@@ -112,40 +110,12 @@ input::placeholder {
   gap: 32px;
   flex-direction: column;
 }
-
-.filtersTitle {
-  color: var(--Text, #475467);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-/* .filterBlock {} */
-
-.filterBlock label {
-  color: var(--Main, #101828);
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.filterLine {
-  height: 1px;
-  margin: 24px 0;
-  background-color: var(--Gray-light, #dadde1);
-}
-
-.filterButtons {
+.filters__icons {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
-
-.filterButton {
+.filters__icon {
   display: flex;
   flex-direction: column;
   width: 112px;
@@ -159,26 +129,21 @@ input::placeholder {
   mix-blend-mode: multiply;
   transition: border 0.3s ease;
 }
-
-.filterButton:hover {
+.filters__icon:hover {
   border: 1px solid var(--Button, #e44848);
 }
-
-.filterButton.active {
+.filters__icon .active {
   border: 1px solid var(--Button, #e44848);
 }
-
-.filterButton svg {
+.filters__icon svg {
   width: 32px;
   height: 32px;
 }
-
-.searchButtons {
+.filters__buttons {
   display: flex;
   gap: 12px;
 }
-
-.searchButton {
+.filters__buttons_search {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
@@ -194,12 +159,10 @@ input::placeholder {
   transition: background-color 0.4s ease;
   border: none;
 }
-
-.searchButton:hover {
+.filters__buttons_search:hover {
   background-color: #d84343;
 }
-
-.resetButton {
+.filters__buttons_reset {
   color: #101828;
   font-size: 14px;
   font-weight: 500;
@@ -214,7 +177,12 @@ input::placeholder {
   border: 1px solid var(--Gray-light, #dadde1);
   transition: border 0.4s ease;
 }
-
-.resetButton:hover {
+.filters__buttons_reset:hover {
   border: 1px solid var(--Button, #e44848);
 }
+
+.filterLine {
+  height: 1px;
+  margin: 24px 0;
+  background-color: var(--Gray-light, #dadde1);
+}/*# sourceMappingURL=Filter.module.css.map */

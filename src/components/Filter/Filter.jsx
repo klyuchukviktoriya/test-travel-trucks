@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import css from "./Filter.module.css";
+import css from "./Filter.module.scss";
 import { fetchLocations } from "../../redux/filters/operations.js";
 import {
   equipmentIcons,
@@ -10,6 +10,7 @@ import {
 } from "../../constants/filter.jsx";
 import sprite from "../../assets/sprite.svg";
 import { toast } from "react-toastify";
+import Button from "../../common/Button/Button.jsx";
 
 export default function Filter({ onApplyFilters }) {
   const [location, setLocation] = useState("");
@@ -115,33 +116,33 @@ export default function Filter({ onApplyFilters }) {
   };
 
   return (
-    <div className={css.filterContainer}>
+    <div className={css.filter}>
       <div className={css.loc}>
-        <label className={css.locTitle}>Location</label>
+        <label className={css.filter__title}>Location</label>
         <input
           type="text"
           value={location}
           onChange={handleLocationInputChange}
           placeholder="City"
-          className={css.locInput}
+          className={css.loc__input}
           onClick={handleInputClick}
           // onFocus={handleInputClick}
           onBlur={() => setTimeout(() => setSuggestionsVisible(false), 500)}
         />
         <svg
-          className={`${css.map} ${location ? css.activeMap : ""}`}
+          className={`${css.loc__map} ${location ? css.loc__activeMap : ""}`}
           width="20"
           height="20"
         >
           <use href={`${sprite}#icon-map`} />
         </svg>
         {isSuggestionsVisible && filteredLocations.length > 0 && (
-          <ul className={css.suggestionsList}>
+          <ul className={css.loc__suggestions}>
             {filteredLocations.map(loc => (
               <li
                 key={loc}
                 onClick={() => handleSuggestionClick(loc)}
-                className={css.suggestionItem}
+                className={css.loc__suggestions_item}
               >
                 {loc}
               </li>
@@ -151,53 +152,59 @@ export default function Filter({ onApplyFilters }) {
       </div>
 
       <div className={css.filters}>
-        <h4 className={css.filtersTitle}>Filters</h4>
-        <div className={css.filterBlock}>
-          <label>Vehicle equipment</label>
+        <h4 className={css.filter__title}>Filters</h4>
+        <div>
+          <h3>Vehicle equipment</h3>
           <div className={css.filterLine}></div>
-          <div className={css.filterButtons}>
+          <div className={css.filters__icons}>
             {Object.keys(equipmentLabels).map(key => (
-              <button
+              <Button
                 key={key}
-                className={`${css.filterButton} ${
+                className={`${css.filters__icon} ${
                   equipment[key] ? css.active : ""
                 }`}
                 onClick={() => handleEquipmentChange(key)}
               >
-                <span className={css.icon}>{equipmentIcons[key]}</span>
-                <span className={css.label}>{equipmentLabels[key]}</span>
-              </button>
+                <span>{equipmentIcons[key]}</span>
+                <span>{equipmentLabels[key]}</span>
+              </Button>
             ))}
           </div>
         </div>
 
-        <div className={css.filterBlock}>
-          <label>Vehicle Type</label>
+        <div>
+          <h3>Vehicle Type</h3>
           <div className={css.filterLine}></div>
-          <div className={css.filterButtons}>
+          <div className={css.filters__icons}>
             {Object.keys(vehicleTypeIcons).map(key => (
-              <button
+              <Button
                 key={key}
-                className={`${css.filterButton} ${
+                className={`${css.filters__icon} ${
                   vehicleType === key ? css.active : ""
                 }`}
                 onClick={() => handleVehicleTypeChange(key)}
               >
                 {vehicleTypeIcons[key]}
                 <span>{vehicleTypeLabels[key]}</span>
-              </button>
+              </Button>
             ))}
           </div>
         </div>
       </div>
 
-      <div className={css.searchButtons}>
-        <button className={css.searchButton} onClick={handleApplyFilters}>
+      <div className={css.filters__buttons}>
+        <Button
+          className={css.filters__buttons_search}
+          onClick={handleApplyFilters}
+        >
           Search
-        </button>
-        <button className={css.resetButton} onClick={handleResetFilters}>
+        </Button>
+        <Button
+          className={css.filters__buttons_reset}
+          onClick={handleResetFilters}
+        >
           Reset filters
-        </button>
+        </Button>
       </div>
     </div>
   );

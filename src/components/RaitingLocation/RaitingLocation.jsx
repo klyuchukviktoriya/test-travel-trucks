@@ -1,4 +1,4 @@
-import css from "./RaitingLocation.module.css";
+import css from "./RaitingLocation.module.scss";
 import sprite from "../../assets/sprite.svg";
 import PropTypes from "prop-types";
 import { truckPropTypes } from "../../constants/propTypes";
@@ -19,19 +19,19 @@ export default function RaitingLocation({ truck, highlightReviews }) {
 
   return (
     <div className={css.truckDetails}>
-      <p className={css.truckStar}>
+      <p className={css.truckDetails__star}>
         <svg width="16" height="16" fill="#FFC531">
           <use href={`${sprite}#icon-star`} />
         </svg>{" "}
         <span
-          className={`${css.truckReview} ${
-            highlightReviews ? css.highlight : ""
+          className={`${css.truckDetails__review} ${
+            highlightReviews ? css.truckDetails__highlight : ""
           }`}
         >
           {truck.rating} ({truck.reviews?.length || 0} Reviews)
         </span>
       </p>
-      <p className={css.truckLoc}>
+      <p className={css.truckDetails__loc}>
         <svg width="16" height="16">
           <use href={`${sprite}#icon-map`} />
         </svg>

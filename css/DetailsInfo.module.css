@@ -1,14 +1,11 @@
-/* .detailsInfo {} */
-
-.detailsNav {
+.detailsInfo__nav {
   display: flex;
   gap: 40px;
   padding-bottom: 22px;
   border-bottom: 1px solid #dadde1;
   margin-bottom: 44px;
 }
-
-.navButton {
+.detailsInfo__nav_btn {
   color: var(--Main, #101828);
   font-family: Inter;
   font-size: 20px;
@@ -16,18 +13,14 @@
   font-weight: 600;
   line-height: 1.2;
 }
-
-.activeNavButton {
+.detailsInfo__nav_btnActive {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-underline-offset: 24px;
   text-decoration-thickness: 5px;
   text-decoration-color: #e44848;
 }
-
-.detailsDiv {
+.detailsInfo__div {
   display: flex;
   gap: 40px;
-}
-
-/* .detailsContent {} */
+}/*# sourceMappingURL=DetailsInfo.module.css.map */

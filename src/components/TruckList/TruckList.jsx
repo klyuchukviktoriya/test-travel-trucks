@@ -4,6 +4,7 @@ import { fetchCampers } from "../../redux/campers/operations.js";
 import { selectCampers } from "../../redux/campers/selectors.js";
 import Truck from "../Truck/Truck.jsx";
 import css from "./TruckList.module.css";
+import Button from "../../common/Button/Button.jsx";
 
 export default function TruckList() {
   const dispatch = useDispatch();
@@ -32,9 +33,9 @@ export default function TruckList() {
         ))}
       </div>
       {visibleCount < trucks.length && (
-        <button onClick={handleLoadMore} className={css.loadMoreButton}>
+        <Button onClick={handleLoadMore} className={css.loadMoreButton}>
           Load More
-        </button>
+        </Button>
       )}
     </div>
   );

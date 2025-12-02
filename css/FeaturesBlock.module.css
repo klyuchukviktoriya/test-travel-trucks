@@ -9,8 +9,7 @@
   background: var(--Inputs, #f7f7f7);
   box-sizing: border-box;
 }
-
-.vehicle {
+.featuresBlock__vehicle {
   margin-top: auto;
   display: flex;
   gap: 24px;
@@ -18,25 +17,15 @@
   align-items: center;
   justify-content: center;
 }
-
-.vehicleTitle {
+.featuresBlock__vehicle h3 {
   color: var(--Main, #101828);
-
-  /* H3 */
-  font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 1.2;
 }
-
-.vehicleLine {
-  height: 1px;
-  background-color: #dadde1;
-  width: 100%;
-}
-
-.vehicleInfo {
+.featuresBlock__vehicle_info {
+  border-top: 1px solid #1f5498;
   width: 527px;
   display: flex;
   gap: 16px;
@@ -49,12 +38,7 @@
   font-weight: 500;
   line-height: 1.5;
 }
-
-.vehicleInfoText {
+.featuresBlock__vehicle_info div {
   display: flex;
   justify-content: space-between;
-}
-
-/* .vehicleInfoValue{
-
-} */
+}/*# sourceMappingURL=FeaturesBlock.module.css.map */
