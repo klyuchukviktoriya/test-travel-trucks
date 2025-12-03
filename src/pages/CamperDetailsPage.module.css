@@ -1,0 +1,42 @@
+.details {
+  padding: 48px 64px;
+  &__div {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+  }
+
+  &__img {
+    border-radius: 10px;
+    max-width: 400px;
+    height: 320px;
+    object-fit: cover;
+    background-color: antiquewhite;
+  }
+
+  &__description {
+    color: var(--Text, #475467);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+/**ddddddddddddd */
+.highlight {
+  background-color: red;
+}

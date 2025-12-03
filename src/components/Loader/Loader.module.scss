@@ -1,3 +1,5 @@
+@use "../../common/styles/utils/index" as *;
+
 .loader {
   width: 527px;
   display: flex;
@@ -10,7 +12,6 @@
   p {
     margin-top: 10px;
     font-size: 18px;
-    color: #475467;
+    color: var(--brown);
   }
-
 }

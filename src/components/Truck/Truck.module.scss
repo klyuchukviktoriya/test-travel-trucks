@@ -1,0 +1,78 @@
+@use "../../common/styles/utils/index" as *;
+
+.truck {
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--brown);
+  background-color: var(--light);
+  &__img {
+    border-radius: 10px;
+    width: 292px;
+    object-fit: cover;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__headUp {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title,
+  &__price {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.33;
+  }
+
+  &__titleRight {
+    display: flex;
+    align-items: center;
+  }
+  &__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--brown);
+    text-overflow: ellipsis;
+  }
+
+  &__btn {
+    @include btn;
+  }
+}
+
+/* .truckPrice {
+
+} */
+
+.favoriteButton,
+.favoriteActive {
+  margin-left: 12px;
+  height: 24px;
+  flex: 1 0 0;
+  fill: var(--dark);
+  stroke: var(--dark);
+  stroke-width: 0.1;
+}
+
+.favoriteActive {
+  fill: var(--red);
+  stroke: var(--red);
+}

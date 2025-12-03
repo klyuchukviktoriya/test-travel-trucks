@@ -10,7 +10,7 @@ import { setFilters } from "../redux/filters/slice.js";
 import Filter from "../components/Filter/Filter.jsx";
 import TruckList from "../components/TruckList/TruckList.jsx";
 import { useEffect } from "react";
-import css from "./CatalogPage.module.css";
+import css from "./CatalogPage.module.scss";
 import Loader from "../components/Loader/Loader.jsx";
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -46,5 +46,4 @@ export default function CatalogPage() {
       )}
     </div>
   );
-  
 }

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import css from "./Truck.module.css";
+import css from "./Truck.module.scss";
 import sprite from "../../assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavorites } from "../../redux/campers/selectors.js";
@@ -24,19 +24,20 @@ export default function Truck({ truck }) {
 
   return (
     <div className={css.truck}>
-      <img className={css.truckImg} src={galleryImage} alt={truck.name} />
-      <div className={css.truckInfo}>
-        <div className={css.truckHead}>
-          <div className={css.truckHeadUp}>
-            <h2 className={css.truckTitle}>{truck.name}</h2>
-            <div className={css.truckTitleRight}>
-              <p className={css.truckPrice}>€{truck.price.toFixed(2)}</p>
+      <img className={css.truck__img} src={galleryImage} alt={truck.name} />
+      <div className={css.truck__info}>
+        <div className={css.truck__head}>
+          <div className={css.truck__headUp}>
+            <h2 className={css.truck__title}>{truck.name}</h2>
+            <div className={css.truck__titleRight}>
+              <p className={css.truck__price}>€{truck.price.toFixed(2)}</p>
 
               <svg
                 width="24"
                 height="24"
-                className={`${isFavorite ? css.favoriteActive : css.favoriteButton
-                  }`}
+                className={`${
+                  isFavorite ? css.favoriteActive : css.favoriteButton
+                }`}
                 onClick={handleFavoriteClick}
                 role="button"
                 aria-label="Like"
@@ -45,15 +46,15 @@ export default function Truck({ truck }) {
               </svg>
             </div>
           </div>
-          <div className={css.truckHeadDown}>
+          <div className={css.truck__headDown}>
             <RaitingLocation truck={truck} />
           </div>
         </div>
-        <p className={css.description}>{truck.description}</p>
+        <p className={css.truck__description}>{truck.description}</p>
         <Features truck={truck} />
 
         <NavLink to={`/catalog/${truck.id}`}>
-          <Button className={css.truckButton}>Show more</Button>
+          <Button className={css.truck__btn}>Show more</Button>
         </NavLink>
       </div>
     </div>

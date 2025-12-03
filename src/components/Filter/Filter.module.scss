@@ -1,3 +1,5 @@
+@use "../../common/styles/utils/index" as *;
+
 .filter {
   width: 360px;
   display: flex;
@@ -5,13 +7,11 @@
   gap: 40px;
 
   &__title {
-    color: var(--Gray, #6c717b);
+    color: var(--brown);
     line-height: 1.5;
   }
 
   h3 {
-    color: var(--Main, #101828);
-    // font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -26,16 +26,13 @@
   flex-direction: column;
   position: relative;
 
-
-
   &__input {
     height: 56px;
     display: flex;
     gap: 8px;
     padding-left: 46px;
-    color: var(--Main, #101828);
     border-radius: 12px;
-    background-color: var(--Inputs, #f7f7f7);
+    background-color: var(--white);
     outline: none;
     font-size: 16px;
     border: none;
@@ -54,16 +51,16 @@
     top: 51px;
     left: 18px;
     pointer-events: none;
-    fill: #6c717b;
-    stroke: #6c717b;
+    fill: var(--brown);
+    stroke: var(--brown);
     stroke-width: 0.3;
     /* opacity: 0.5; */
     transition: border 0.4s ease;
   }
 
   &__activeMap {
-    fill: #101828;
-    stroke: #101828;
+    fill: var(--dark);
+    stroke: var(--dark);
     opacity: 1;
   }
 
@@ -71,16 +68,16 @@
     list-style: none;
     padding: 4px;
     margin: 0;
-    border: 1px solid #ccc;
+    border: 1px solid var(--powder);
     max-height: 200px;
     overflow-y: auto;
-    background: #fff;
+    background: var(--light);
     position: absolute;
     left: 30px;
     top: 88px;
     z-index: 1000;
     width: 280px;
-    border: solid 1px #e44848;
+    border: solid 1px var(--red);
     border-radius: 8px;
 
     &_item {
@@ -90,7 +87,7 @@
       border-radius: 8px;
 
       &:hover {
-        background-color: #f0f0f0;
+        background-color: var(--powder);
       }
     }
   }
@@ -139,23 +136,22 @@
     align-items: center;
     gap: 8px;
     border-radius: 10px;
-    border: 1px solid var(--Gray-light, #dadde1);
+    border: 1px solid var(--powder);
     mix-blend-mode: multiply;
     transition: border 0.3s ease;
 
     &:hover {
-      border: 1px solid var(--Button, #e44848);
+      border: 1px solid var(--red);
     }
 
     .active {
-      border: 1px solid var(--Button, #e44848);
+      border: 1px solid var(--red);
     }
 
     svg {
       width: 32px;
       height: 32px;
     }
-
   }
 
   &__buttons {
@@ -163,54 +159,20 @@
     gap: 12px;
 
     &_search {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: -0.005em;
-      display: flex;
-      width: 166px;
-      padding: 16px 40px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 200px;
-      background-color: #e44848;
-      transition: background-color 0.4s ease;
-      border: none;
-
-      &:hover {
-        background-color: #d84343;
-      }
-
-
+      @include btn;
     }
 
     &_reset {
-      color: #101828;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: -0.005em;
-      display: flex;
-      width: 166px;
-      padding: 16px 40px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 200px;
-      border: 1px solid var(--Gray-light, #dadde1);
-      transition: border 0.4s ease;
-
-      &:hover {
-        border: 1px solid var(--Button, #e44848);
-      }
+      @include btn;
+      background-color: var(--powder);
+      color: var(--dark);
     }
   }
-
 }
 
 //* &&&&&&&&&&&&&&&&&&&&&&&&&&&&& line
 .filterLine {
   height: 1px;
   margin: 24px 0;
-  background-color: var(--Gray-light, #dadde1);
+  background-color: var(--brown);
 }

@@ -1,4 +1,4 @@
-import css from "./Reviews.module.css";
+import css from "./Reviews.module.scss";
 import sprite from "../../assets/sprite.svg";
 import PropTypes from "prop-types";
 
@@ -12,7 +12,7 @@ export default function Reviews({ reviews }) {
           key={i}
           width="16"
           height="16"
-          fill={i <= clampedRating ? "#e78646" : "#f4ede4"}
+          fill={i <= clampedRating ? "#9a3800" : "#e9dbd3"}
           className={css.star}
         >
           <use href={`${sprite}#icon-star`} />
@@ -23,29 +23,29 @@ export default function Reviews({ reviews }) {
   };
 
   if (!Array.isArray(reviews) || reviews.length === 0) {
-    return <p className={css.reviews}>No reviews available for this camper.</p>;
+    return <p className={css.review}>No reviews available for this camper.</p>;
   }
 
   return (
-    <div className={css.reviews}>
+    <div className={css.review}>
       {reviews.map((review, index) => (
-        <div key={index} className={css.reviewCard}>
-          <div className={css.reviewHeader}>
-            <div className={css.avatar}>
-              <span className={css.avatarLetter}>
+        <div key={index} className={css.review__card}>
+          <div className={css.review__header}>
+            <div className={css.review__avatar}>
+              <span className={css.review__avatar_letter}>
                 {review.reviewer_name[0].toUpperCase()}
               </span>
             </div>
 
-            <div className={css.reviewContent}>
-              <h3 className={css.author}>{review.reviewer_name}</h3>
-              <div className={css.stars}>
+            <div className={css.review__content}>
+              <h3 className={css.review__author}>{review.reviewer_name}</h3>
+              <div className={css.review__stars}>
                 {renderStars(review.reviewer_rating)}
               </div>
             </div>
           </div>
 
-          <p className={css.comment}>{review.comment}</p>
+          <p className={css.review__comment}>{review.comment}</p>
         </div>
       ))}
     </div>

@@ -1,0 +1,58 @@
+@use "../../common/styles/utils/index" as *;
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 631px;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-bottom: 1px solid var(--powder);
+    padding-bottom: 16px;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 60px;
+    background: var(--powder);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_letter {
+      color: var(--red);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.33;
+    }
+  }
+
+  &__header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  /* &__content{} */
+  &__author {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__comment {
+    color: var(--brown);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}

@@ -20,7 +20,7 @@ export default function RaitingLocation({ truck, highlightReviews }) {
   return (
     <div className={css.truckDetails}>
       <p className={css.truckDetails__star}>
-        <svg width="16" height="16" fill="#FFC531">
+        <svg width="16" height="16" fill="#9a3800">
           <use href={`${sprite}#icon-star`} />
         </svg>{" "}
         <span

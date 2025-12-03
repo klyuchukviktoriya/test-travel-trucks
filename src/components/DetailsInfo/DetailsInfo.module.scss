@@ -1,15 +1,15 @@
-.detailsInfo {
+@use "../../common/styles/utils/index" as *;
 
+.detailsInfo {
   &__nav {
     display: flex;
     gap: 40px;
     padding-bottom: 22px;
-    border-bottom: 1px solid #dadde1;
+    border-bottom: 1px solid var(--brown);
     margin-bottom: 44px;
 
     &_btn {
-      color: var(--Main, #101828);
-      font-family: Inter;
+      color: var(--dark);
       font-size: 20px;
       font-style: normal;
       font-weight: 600;
@@ -21,7 +21,7 @@
       text-decoration-style: solid;
       text-underline-offset: 24px;
       text-decoration-thickness: 5px;
-      text-decoration-color: #e44848;
+      text-decoration-color: var(--red);
     }
   }
 

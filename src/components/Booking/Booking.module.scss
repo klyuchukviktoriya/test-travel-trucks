@@ -1,150 +1,122 @@
+@use "../../common/styles/utils/index" as *;
+
 .booking {
-    padding: 40px 57px;
-    border-radius: 10px;
-    border: 1px solid var(--Gray-light, #dadde1);
+  padding: 40px 57px;
+  border-radius: 10px;
+  border: 1px solid var(--brown);
 
-    &__title {
-        color: var(--Main, #101828);
-        font-family: Inter;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 1.2;
-        margin-bottom: 8px;
+  &__title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    color: var(--brown);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  &__form {
+    width: 527px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    position: relative;
+
+    &_input {
+      border-radius: 12px;
+      background: var(--white);
+      padding: 18px;
+      border: none;
+      width: 100%;
+      max-width: 525px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border 0.4s ease;
+      border: 1px solid var(--white);
+      color: var(--dark);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5;
     }
 
-    &__text {
-        color: var(--Gray, #6c717b);
-        font-family: Inter;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.5;
-        margin-bottom: 24px;
+    &_input:focus {
+      border: 1px solid var(--red);
     }
 
-    &__form {
-        width: 527px;
-
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        align-items: center;
-        position: relative;
-
-        &_input {
-            border-radius: 12px;
-            background: var(--Inputs, #f7f7f7);
-            padding: 18px;
-            border: none;
-            width: 100%;
-            max-width: 525px;
-            box-sizing: border-box;
-            outline: none;
-            transition: border 0.4s ease;
-            border: 1px solid #f7f7f7;
-            color: var(--Main, #101828);
-
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-
-        &_input:focus {
-            border: 1px solid #e44848;
-        }
-
-        &_input:hover {
-            border: 1px solid #e44848;
-        }
-
-        &_date {
-            border-radius: 12px;
-            background: var(--Inputs, #f7f7f7);
-            padding: 18px;
-            border: none;
-
-            width: 525px;
-            box-sizing: border-box;
-            outline: none;
-            transition: border 0.4s ease;
-            border: 1px solid #f7f7f7;
-            color: var(--Main, #101828);
-
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 24px;
-        }
-
-        &_input textarea {
-            height: 118px;
-            resize: none;
-        }
-
-        &_btn {
-            color: #fff;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 1.5;
-            letter-spacing: -0.005em;
-            display: flex;
-            width: 166px;
-            padding: 16px 40px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 200px;
-            background-color: #e44848;
-            transition: background-color 0.4s ease;
-            border: none;
-        }
-
-        &_btn:hover {
-            background-color: #d84343;
-        }
+    &_input:hover {
+      border: 1px solid var(--red);
     }
 
+    &_date {
+      border-radius: 12px;
+      background: var(--white);
+      padding: 18px;
+      border: none;
 
-    &__modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-
-        &_content {
-            background: white;
-            padding: 20px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-
-            h3 {
-                margin-bottom: 10px;
-            }
-
-            p {
-                color: #555;
-            }
-        }
-
-        &_gif {
-            width: 300px;
-            height: 300px;
-            margin: 20px auto;
-        }
+      width: 525px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border 0.4s ease;
+      border: 1px solid var(--white);
+      color: var(--dark);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
     }
 
+    &_input textarea {
+      height: 118px;
+      resize: none;
+    }
 
+    &_btn {
+      @include btn;
+    }
+  }
 
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 
+    &_content {
+      background: white;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
 
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: var(--brown);
+      }
+    }
+
+    &_gif {
+      width: 300px;
+      height: 300px;
+      margin: 20px auto;
+    }
+  }
 }

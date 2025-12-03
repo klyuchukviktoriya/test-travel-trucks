@@ -50,7 +50,7 @@ export const equipmentIcons = {
     </svg>
   ),
   water: (
-    <svg fill="transparent" stroke="#101828">
+    <svg fill="transparent" stroke="#121212">
       <use href={`${sprite}#icon-water`} />
     </svg>
   ),
@@ -78,7 +78,7 @@ export const equipmentIconsTruck = {
     </svg>
   ),
   gas: (
-    <svg fill="transparent" stroke="#101828">
+    <svg fill="transparent" stroke="#121212">
       <use href={`${sprite}#icon-gas`} />
     </svg>
   ),
@@ -88,27 +88,27 @@ export const equipmentIconsTruck = {
     </svg>
   ),
   water: (
-    <svg fill="transparent" stroke="#101828">
+    <svg fill="transparent" stroke="#121212">
       <use href={`${sprite}#icon-water`} />
     </svg>
   ),
   engine: (
-    <svg fill="#101828" stroke="transparent">
+    <svg fill="#121212" stroke="transparent">
       <use href={`${sprite}#icon-petrol`} />
     </svg>
   ),
   radio: (
-    <svg fill="#101828" stroke="transparent">
+    <svg fill="#121212" stroke="transparent">
       <use href={`${sprite}#icon-radio`} />
     </svg>
   ),
   refrigerator: (
-    <svg fill="#101828" stroke="transparent">
+    <svg fill="#121212" stroke="transparent">
       <use href={`${sprite}#icon-refrigerator`} />
     </svg>
   ),
   microwave: (
-    <svg fill="transparent" stroke="#101828">
+    <svg fill="transparent" stroke="#121212">
       <use href={`${sprite}#icon-microwave`} />
     </svg>
   ),

@@ -1,29 +1,39 @@
- @use "../../common/styles/utils/index" as *;
+@use "../../common/styles/utils/index" as *;
 
- .main {
-   margin: 40px 0;
-   width: 100%;
-   color: #f7f7f7;
-   background-image: url("../../assets/bg-home.jpg");
-   background-size: cover;
-   background-position: center;
-   padding: 260px 64px;
+.main {
+  margin: 40px 0;
+  width: 100%;
+  color: var(--white);
+  background-image: url("../../assets/bg-home.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 260px 64px;
 
-   h1 {
-     font-size: 48px;
-     font-weight: 600;
-     line-height: 0.66;
-     margin-bottom: 16px;
-   }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 1;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  }
 
-   p {
-     font-size: 24px;
-     font-weight: 600;
-     line-height: 1.33;
-     margin-bottom: 40px;
-   }
+  h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 0.66;
+    margin-bottom: 16px;
+  }
 
-   &__btn {
-     @include btn;
-   }
- }
+  p {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    @include btn;
+  }
+}

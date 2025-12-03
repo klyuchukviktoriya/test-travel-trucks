@@ -9,9 +9,9 @@ import { truckPropTypes } from "../../constants/propTypes.js";
 export default function Features({ truck }) {
   const fuelFeature =
     truck.engine === "petrol" ? (
-      <div className={css.iconLabelContainer}>
+      <div className={css.feature__item}>
         {equipmentIconsTruck.petrol}
-        <span className={css.featureLabel}>Petrol</span>
+        <span className={css.feature__item_label}>Petrol</span>
       </div>
     ) : null;
 
