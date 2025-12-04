@@ -1,4 +1,3 @@
-@import url("react-datepicker/dist/react-datepicker.css");
 :root {
   --dark: #121212;
   --light: #f4ede4;
@@ -23,12 +22,14 @@
   src: url("../fonts/roboto-v49-cyrillic_latin-regular.woff2") format("woff2"), url("../fonts/roboto-v49-cyrillic_latin-regular.woff") format("woff");
 }
 .error__message {
-  color: var(--accent);
-  font-size: 14px;
+  color: var(--red);
+  font-size: 12px;
   margin-top: 4px;
   display: block;
   width: 100%;
   text-align: center;
+  position: absolute;
+  z-index: 999;
 }
 
 .container {
@@ -44,6 +45,7 @@
 
 .myCustomDatepickerPopper {
   font-family: Roboto, sans-serif;
+  background: var(--light);
 }
 
 .myCustomDatepickerPopper .react-datepicker {
@@ -52,6 +54,8 @@
   background-color: var(--light);
   z-index: 1000;
   position: absolute;
+  top: -80px;
+  left: 0;
 }
 
 .myCustomDatepickerPopper .myCustomDatepickerPopper,

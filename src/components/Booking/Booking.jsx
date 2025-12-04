@@ -33,8 +33,6 @@ export default function Booking() {
       newErrors.email = "Email is invalid";
     if (!formData.bookingDate)
       newErrors.bookingDate = "Booking date is required";
-    if (formData.comment.length > 200)
-      newErrors.comment = "Comment must not exceed 200 characters";
     return newErrors;
   };
 
@@ -64,54 +62,62 @@ export default function Booking() {
       </p>
 
       <form className={css.booking__form} onSubmit={handleSubmit}>
-        <input
-          className={css.booking__form_input}
-          type="text"
-          name="name"
-          placeholder="Name*"
-          value={formData.name}
-          onChange={handleChange}
-          maxLength="50"
-        />
-        {errors.name && <p className={css.error__message}>{errors.name}</p>}
-
-        <input
-          className={css.booking__form_input}
-          type="email"
-          name="email"
-          placeholder="Email*"
-          value={formData.email}
-          onChange={handleChange}
-          maxLength="100"
-        />
-        {errors.email && <p className={css.error__message}>{errors.email}</p>}
-
-        <DatePicker
-          className={`${css.booking__form_date} ${css.booking__form_input}`}
-          selected={formData.bookingDate}
-          onChange={handleDateChange}
-          placeholderText="Booking date*"
-          dateFormat="yyyy-MM-dd"
-          minDate={new Date()}
-          popperClassName="myCustomDatepickerPopper"
-          shouldCloseOnSelect={false}
-          popperPlacement="bottom-start"
-        />
-        {errors.bookingDate && (
-          <p className={css.error__message}>{errors.bookingDate}</p>
-        )}
-
-        <textarea
-          className={css.booking__form_input}
-          name="comment"
-          placeholder="Comment"
-          value={formData.comment}
-          onChange={handleChange}
-          maxLength="200"
-        />
-        {errors.comment && (
-          <p className={css.error__message}>{errors.comment}</p>
-        )}
+        <div className={css.booking__form_inputWrapper}>
+          <input
+            className={`${css.booking__form_input} ${
+              errors.name ? css.inputError : ""
+            }`}
+            type="text"
+            name="name"
+            placeholder="Name*"
+            value={formData.name}
+            onChange={handleChange}
+            maxLength="50"
+          />
+          {errors.name && <p className={css.error__message}>{errors.name}</p>}
+        </div>
+        <div className={css.booking__form_inputWrapper}>
+          <input
+            className={`${css.booking__form_input} ${
+              errors.email ? css.inputError : ""
+            }`}
+            type="email"
+            name="email"
+            placeholder="Email*"
+            value={formData.email}
+            onChange={handleChange}
+            maxLength="100"
+          />
+          {errors.email && <p className={css.error__message}>{errors.email}</p>}
+        </div>
+        <div className={css.booking__form_inputWrapper}>
+          <DatePicker
+            className={`${css.booking__form_date} ${css.booking__form_input} ${
+              errors.bookingDate ? css.inputError : ""
+            }`}
+            selected={formData.bookingDate}
+            onChange={handleDateChange}
+            placeholderText="Booking date*"
+            dateFormat="yyyy-MM-dd"
+            minDate={new Date()}
+            popperClassName="myCustomDatepickerPopper"
+            shouldCloseOnSelect={false}
+            popperPlacement="bottom-start"
+          />
+          {errors.bookingDate && (
+            <p className={css.error__message}>{errors.bookingDate}</p>
+          )}
+        </div>
+        <div className={css.booking__form_inputWrapper}>
+          <textarea
+            className={css.booking__form_input}
+            name="comment"
+            placeholder="Comment"
+            value={formData.comment}
+            onChange={handleChange}
+            maxLength="400"
+          />
+        </div>
 
         <Button type="submit" className={css.booking__form_btn}>
           Submit

@@ -5,8 +5,9 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+
   &__moreBtn {
     @include btn;
-    margin: 40px auto 0;
+    margin: 40px auto;
   }
 }

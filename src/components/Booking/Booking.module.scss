@@ -27,37 +27,42 @@
 
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 24px;
     align-items: center;
     position: relative;
 
+    &_inputWrapper {
+      position: relative;
+      max-width: 525px;
+    }
+
     &_input {
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
       border-radius: 12px;
       background: var(--white);
       padding: 18px;
       border: none;
-      width: 100%;
-      max-width: 525px;
-      box-sizing: border-box;
+      width: 525px;
       outline: none;
-      transition: border 0.4s ease;
       border: 1px solid var(--white);
       color: var(--dark);
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 1.5;
+
       &::placeholder {
         color: var(--brown);
       }
-    }
 
-    &_input:focus {
-      border: 1px solid var(--red);
-    }
+      &:focus {
+        border: 1px solid var(--red);
+      }
 
-    &_input:hover {
-      border: 1px solid var(--red);
+      &:hover {
+        border: 1px solid var(--red);
+      }
     }
 
     &_date {
@@ -65,7 +70,6 @@
       background: var(--white);
       padding: 18px;
       border: none;
-
       width: 525px;
       box-sizing: border-box;
       outline: none;
@@ -78,14 +82,37 @@
       line-height: 24px;
     }
 
-    &_input textarea {
+    textarea {
       height: 118px;
       resize: none;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        margin: 3px;
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--brown);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-button {
+        display: none;
+      }
     }
 
     &_btn {
       @include btn;
     }
+  }
+
+  .inputError {
+    border: 1px solid var(--red);
+    background-color: var(--powder);
   }
 
   &__modal {
@@ -94,7 +121,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--brown);
+    background-color: var(--powder);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,7 +131,7 @@
       background: var(--white);
       padding: 20px 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 6px var(--powder);
+      // box-shadow: 0 4px 6px var(--powder);
       text-align: center;
 
       h3 {
