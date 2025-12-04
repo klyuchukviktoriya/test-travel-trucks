@@ -47,6 +47,9 @@
       font-style: normal;
       font-weight: 400;
       line-height: 1.5;
+      &::placeholder {
+        color: var(--brown);
+      }
     }
 
     &_input:focus {
@@ -91,17 +94,17 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--brown);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 
     &_content {
-      background: white;
+      background: var(--white);
       padding: 20px 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px var(--powder);
       text-align: center;
 
       h3 {

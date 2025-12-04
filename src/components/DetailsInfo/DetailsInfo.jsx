@@ -24,30 +24,32 @@ export default function DetailsInfo() {
   };
 
   return (
-    <div className={css.detailsInfo}>
-      <nav className={css.detailsInfo__nav}>
-        <NavLink
-          className={`${css.detailsInfo__nav_btn} ${
-            activeTab === "features" ? css.detailsInfo__nav_btnActive : ""
-          }`}
-          onClick={() => setActiveTab("features")}
-        >
-          Features
-        </NavLink>
-        <NavLink
-          className={`${css.detailsInfo__nav_btn} ${
-            activeTab === "reviews" ? css.detailsInfo__nav_btnActive : ""
-          }`}
-          onClick={() => setActiveTab("reviews")}
-        >
-          Reviews
-        </NavLink>
-      </nav>
+    <section className={css.detailsInfo}>
+      <div className={`${css.detailsInfo} ${css.container}`}>
+        <nav className={css.detailsInfo__nav}>
+          <NavLink
+            className={`${css.detailsInfo__nav_btn} ${
+              activeTab === "features" ? css.detailsInfo__nav_btnActive : ""
+            }`}
+            onClick={() => setActiveTab("features")}
+          >
+            Features
+          </NavLink>
+          <NavLink
+            className={`${css.detailsInfo__nav_btn} ${
+              activeTab === "reviews" ? css.detailsInfo__nav_btnActive : ""
+            }`}
+            onClick={() => setActiveTab("reviews")}
+          >
+            Reviews
+          </NavLink>
+        </nav>
 
-      <div className={css.detailsInfo__div}>
-        <div>{renderContent()}</div>
-        <Booking />
+        <div className={css.detailsInfo__div}>
+          <div>{renderContent()}</div>
+          <Booking />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

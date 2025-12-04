@@ -36,6 +36,10 @@
   font-weight: 400;
   src: url("../fonts/roboto-v49-cyrillic_latin-regular.woff2") format("woff2"), url("../fonts/roboto-v49-cyrillic_latin-regular.woff") format("woff");
 }
+section {
+  padding: 48px 0;
+}
+
 .error__message {
   color: var(--accent);
   font-size: 14px;
@@ -46,6 +50,9 @@
 }
 
 .container {
+  border: 1px solid red;
+  width: 100%;
+  padding: 0 64px;
   max-width: 1440px;
   margin: 0 auto;
 }

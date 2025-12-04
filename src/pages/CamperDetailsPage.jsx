@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCamperDetails } from "../redux/campers/operations.js";
-import css from "../components/Truck/Truck.module.scss";
+// import css from "../components/Truck/Truck.module.scss";
+import css from "./CamperDetailsPage.module.scss";
 import { selectCamperDetails } from "../redux/campers/selectors.js";
 import DetailsInfo from "../components/DetailsInfo/DetailsInfo.jsx";
 import RaitingLocation from "../components/RaitingLocation/RaitingLocation.jsx";
@@ -22,19 +23,17 @@ export default function CamperDetailsPage() {
   }
 
   return (
-    <div className={css.details}>
-      <div className={css.details__div}>
+    <section className={css.details}>
+      <div className={`${css.details__div} ${css.container}`}>
         <div className={css.details__head}>
-          {/* fsdifbnsdjfvnhaosjfvasbfoasnf vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/}
-
-          <div className={css.truckHead}>
-            <h2 className={css.truckTitle}>{truck.name}</h2>
+          <div className={css.details__truckHead}>
+            <h2 className={css.details__truckTitle}>{truck.name}</h2>
             <RaitingLocation truck={truck} highlightReviews={true} />
           </div>
-          <p className={css.truckPrice}>€{truck.price.toFixed(2)}</p>
+          <p className={css.details__truckPrice}>€{truck.price.toFixed(2)}</p>
         </div>
 
-        <div className={css.details_gallery}>
+        <div className={css.details__gallery}>
           {truck.gallery?.map((image, index) => (
             <img
               key={index}
@@ -48,6 +47,6 @@ export default function CamperDetailsPage() {
       </div>
 
       <DetailsInfo />
-    </div>
+    </section>
   );
 }

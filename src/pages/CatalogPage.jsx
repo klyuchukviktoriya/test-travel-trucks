@@ -28,22 +28,26 @@ export default function CatalogPage() {
   };
 
   return (
-    <div className={css.catalog}>
-      <Filter onApplyFilters={handleApplyFilters} />
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <div className={css.errorContainer}>
-          <p className={css.errorMessage}>No campers found for your request.</p>
-          <img
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzd3ZXozbmJuN3g4dDBudXVqdmppcjRvcTRob3BoZG0ydnRnazMxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g01ZnwAUvutuK8GIQn/giphy.gif"
-            alt="No campers found"
-            className={css.errorGif}
-          />
-        </div>
-      ) : (
-        <TruckList trucks={campers} />
-      )}
-    </div>
+    <section>
+      <div className={`${css.catalog} ${css.container}`}>
+        <Filter onApplyFilters={handleApplyFilters} />
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <div className={css.errorContainer}>
+            <p className={css.errorMessage}>
+              No campers found for your request.
+            </p>
+            <img
+              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzd3ZXozbmJuN3g4dDBudXVqdmppcjRvcTRob3BoZG0ydnRnazMxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g01ZnwAUvutuK8GIQn/giphy.gif"
+              alt="No campers found"
+              className={css.errorGif}
+            />
+          </div>
+        ) : (
+          <TruckList trucks={campers} />
+        )}
+      </div>
+    </section>
   );
 }

@@ -1,9 +1,9 @@
 @use "../common/styles/utils/index" as *;
 
 .catalog {
-  padding: 48px 64px;
   display: flex;
   gap: 64px;
+  margin: 0 auto;
 }
 
 .errorContainer {
