@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 24px;
   width: 631px;
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -21,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     &_letter {
       color: var(--red);
       font-size: 24px;
@@ -35,11 +37,11 @@
     gap: 16px;
     align-items: center;
   }
+
   /* &__content{} */
   &__author {
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
     line-height: 1.5;
   }
 
