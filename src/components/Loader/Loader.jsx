@@ -8,6 +8,8 @@ export default function Loader() {
         height={120}
         width={120}
         ariaLabel="loading"
+        glassColor="#f4ede4"
+        color="#644837"
       />
       <p>Loading...</p>
     </div>

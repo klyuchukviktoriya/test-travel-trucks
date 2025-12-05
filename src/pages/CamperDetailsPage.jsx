@@ -46,7 +46,7 @@ export default function CamperDetailsPage() {
         <p className={css.details__description}>{truck.description}</p>
       </div>
 
-      <DetailsInfo />
+      {/* <DetailsInfo /> */}
     </section>
   );
 }
