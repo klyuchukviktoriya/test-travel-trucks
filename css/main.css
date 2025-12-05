@@ -44,7 +44,25 @@
   max-width: 1440px;
   margin: 0 auto;
 }
-
+/* .react-datepicker {
+  &__input-container {
+    width: 100%;
+    max-width: 527px;
+  }
+} */
+.react-datepicker-wrapper {
+  display: block;
+  padding: 0;
+  border: 0;
+  width: 100% !important;
+  max-width: 527px !important;
+}
+.react-datepicker__input-container {
+  position: relative;
+  display: block;
+  width: 100% !important;
+  max-width: 527px !important;
+}
 .react-datepicker__day--selected {
   background-color: var(--brown);
 }

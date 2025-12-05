@@ -24,7 +24,7 @@ export default function DetailsInfo() {
   };
 
   return (
-    <section className={css.detailsInfo}>
+    <section>
       <div className={`${css.detailsInfo} ${css.container}`}>
         <nav className={css.detailsInfo__nav}>
           <NavLink

@@ -10,7 +10,7 @@ export default function FeaturesBlock() {
       <Features truck={truck} />
       <div className={css.featuresBlock__vehicle}>
         <h3>Vehicle details</h3>
-        <div className={css.featuresBlock__vehicle_info}>
+        {/* <div className={css.featuresBlock__vehicle_info}>
           <div>
             <p>Form</p>
             <p>{truck.form}</p>
@@ -35,7 +35,35 @@ export default function FeaturesBlock() {
             <p>Consumption</p>
             <p>{truck.consumption}</p>
           </div>
-        </div>
+        </div> */}
+        <table className={css.featuresBlock__vehicle_info}>
+          <tbody>
+            <tr>
+              <td>Form</td>
+              <td>{truck.form}</td>
+            </tr>
+            <tr>
+              <td>Length</td>
+              <td>{truck.length}</td>
+            </tr>
+            <tr>
+              <td>Width</td>
+              <td>{truck.width}</td>
+            </tr>
+            <tr>
+              <td>Height</td>
+              <td>{truck.height}</td>
+            </tr>
+            <tr>
+              <td>Tank</td>
+              <td>{truck.tank}</td>
+            </tr>
+            <tr>
+              <td>Consumption</td>
+              <td>{truck.consumption}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

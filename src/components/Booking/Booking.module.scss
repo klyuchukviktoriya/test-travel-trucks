@@ -1,9 +1,13 @@
 @use "../../common/styles/utils/index" as *;
 
 .booking {
-  padding: 40px 57px;
+
+  padding: 12px;
   border-radius: 10px;
   border: 1px solid var(--brown);
+  // min-width: ;
+  // max-width: 720px;
+  margin: 0 auto;
 
   &__title {
     font-size: 20px;
@@ -23,8 +27,9 @@
   }
 
   &__form {
-    width: 527px;
-
+    // max-width: 720px;
+    // width: 100% !important;
+    // max-width: 527px !important;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -33,7 +38,8 @@
 
     &_inputWrapper {
       position: relative;
-      max-width: 525px;
+      // width: 527px;
+      width: 100%;
     }
 
     &_input {
@@ -43,7 +49,7 @@
       background: var(--white);
       padding: 18px;
       border: none;
-      width: 525px;
+      width: 100%;
       outline: none;
       border: 1px solid var(--white);
       color: var(--dark);
@@ -70,7 +76,9 @@
       background: var(--white);
       padding: 18px;
       border: none;
-      width: 525px;
+      // width: 100% !important;
+      // max-width: 527px !important;
+
       box-sizing: border-box;
       outline: none;
       transition: border 0.4s ease;
@@ -148,5 +156,60 @@
       height: 300px;
       margin: 20px auto;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .booking {
+    &__form {
+      width: 527px;
+
+      &_inputWrapper {
+        //  position: relative;
+        // width: 527px;
+        //  width: 100%;
+      }
+
+      &_date {
+        width: 527px;
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .booking {
+    padding: 40px;
+    // flex: 1;
+
+    &__form {
+      width: 420px;
+
+      &_date {
+        width: 420px;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 1280px) {
+  .booking {
+    &__form {
+      width: 600px;
+
+      &_inputWrapper {
+        //  position: relative;
+        // width: 527px;
+        //  width: 100%;
+      }
+
+      &_date {
+        width: 600px;
+      }
+    }
+
   }
 }

@@ -1,6 +1,7 @@
 @use "../../common/styles/utils/index" as *;
 
 .detailsInfo {
+
   &__nav {
     display: flex;
     gap: 40px;
@@ -28,5 +29,29 @@
   &__div {
     display: flex;
     gap: 40px;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .detailsInfo {
+    &__div {
+      display: flex;
+      gap: 20px;
+      flex-direction: row;
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .detailsInfo {
+    padding: 0 64px;
+
+    &__div {
+      // display: flex;
+      gap: 40px;
+      // flex-direction: row;
+    }
   }
 }
