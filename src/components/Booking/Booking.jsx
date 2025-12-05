@@ -136,7 +136,7 @@ export default function Booking() {
           <div className={css.booking__modal_content}>
             <img
               src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXljeHpocjF2dWI5Zmc1MWNtNTB2NWlscmpidHdpY2ZpMm9qcjJ1YyZlcD12MV9naWZzX3RyZW5kaW5nJmN0PWc/R6gvnAxj2ISzJdbA63/giphy.gif"
-              alt="Success"
+              alt="We are happy you choose us"
               className={css.booking__modal_gif}
             />
             <h3>Thank you!</h3>

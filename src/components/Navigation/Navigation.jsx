@@ -9,7 +9,7 @@ export default function Navigation() {
   return (
     <header className={css.header}>
       <div className={css.header__container}>
-        <img className={css.header__logo} src={logo} />
+        <img className={css.header__logo} src={logo} alt="logo travel trucks" />
         <nav className={css.header__linkwrapper}>
           <NavLink className={classLink} to="/">
             Home
