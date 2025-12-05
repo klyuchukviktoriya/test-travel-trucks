@@ -2,15 +2,10 @@
 
 .catalog {
   .container {
-    // width: 100%;
     display: flex;
     gap: 32px;
-    // margin: 0 auto;
-    // align-items: center;
-
     flex-direction: column;
   }
-
 }
 
 .errorContainer {
@@ -34,7 +29,6 @@
     .container {
       padding: 0 8px;
     }
-
   }
 }
 
@@ -45,7 +39,6 @@
       gap: 12px;
       padding: 0 8px;
     }
-
   }
 }
 
@@ -54,8 +47,6 @@
     .container {
       gap: 64px;
       padding: 0 64px;
-      // justify-content: space-between;
     }
-
   }
 }

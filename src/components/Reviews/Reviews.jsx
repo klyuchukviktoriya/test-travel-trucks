@@ -36,7 +36,6 @@ export default function Reviews({ reviews }) {
                 {review.reviewer_name[0].toUpperCase()}
               </span>
             </div>
-
             <div className={css.review__content}>
               <h3 className={css.review__author}>{review.reviewer_name}</h3>
               <div className={css.review__stars}>
@@ -44,7 +43,6 @@ export default function Reviews({ reviews }) {
               </div>
             </div>
           </div>
-
           <p className={css.review__comment}>{review.comment}</p>
         </div>
       ))}

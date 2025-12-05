@@ -1,7 +1,6 @@
 @use "../../common/styles/utils/index" as *;
 
 .filter {
-  // width: 360px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -57,7 +56,6 @@
     fill: var(--brown);
     stroke: var(--brown);
     stroke-width: 0.3;
-    /* opacity: 0.5; */
     transition: border 0.4s ease;
   }
 
@@ -68,7 +66,6 @@
   }
 
   &__suggestions {
-
     list-style: none;
     padding: 4px;
     margin: 0;
@@ -113,7 +110,6 @@
       }
     }
   }
-
 }
 
 .filters {
@@ -127,8 +123,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 11px;
-    // padding-bottom: 24px;
-    // border-bottom: 1px solid var(--brown);
   }
 
   &__icon {
@@ -148,8 +142,6 @@
     &:hover {
       border: 1px solid var(--red);
     }
-
-
 
     svg {
       width: 32px;
@@ -186,10 +178,7 @@
     }
 
     &__icons {
-
       gap: 12px;
-      // padding-bottom: 24px;
-      // border-bottom: 1px solid var(--brown);
     }
   }
 }

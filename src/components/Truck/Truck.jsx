@@ -13,7 +13,6 @@ import Button from "../../common/Button/Button.jsx";
 export default function Truck({ truck }) {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
-
   const isFavorite = favorites.includes(truck.id);
 
   const handleFavoriteClick = () => {
@@ -27,14 +26,12 @@ export default function Truck({ truck }) {
       <div className={css.truck__img}>
         <img src={galleryImage} alt={truck.name} />
       </div>
-
       <div className={css.truck__info}>
         <div className={css.truck__head}>
           <div className={css.truck__headUp}>
             <h2 className={css.truck__title}>{truck.name}</h2>
             <div className={css.truck__titleRight}>
               <p className={css.truck__price}>€{truck.price.toFixed(2)}</p>
-
               <svg
                 width="24"
                 height="24"
@@ -55,7 +52,6 @@ export default function Truck({ truck }) {
         </div>
         <p className={css.truck__description}>{truck.description}</p>
         <Features truck={truck} />
-
         <NavLink to={`/catalog/${truck.id}`}>
           <Button className={css.truck__btn}>Show more</Button>
         </NavLink>

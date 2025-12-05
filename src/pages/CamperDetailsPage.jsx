@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCamperDetails } from "../redux/campers/operations.js";
-// import css from "../components/Truck/Truck.module.scss";
 import css from "./CamperDetailsPage.module.scss";
 import { selectCamperDetails } from "../redux/campers/selectors.js";
 import DetailsInfo from "../components/DetailsInfo/DetailsInfo.jsx";

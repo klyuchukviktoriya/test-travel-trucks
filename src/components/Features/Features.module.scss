@@ -4,7 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  // width: 527px;
 
   &__item {
     width: fit-content;
@@ -27,11 +26,5 @@
   svg {
     width: 20px;
     height: 20px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .feature {
-    // width: 527px;
   }
 }

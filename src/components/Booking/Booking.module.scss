@@ -1,12 +1,9 @@
 @use "../../common/styles/utils/index" as *;
 
 .booking {
-
   padding: 12px;
   border-radius: 10px;
   border: 1px solid var(--brown);
-  // min-width: ;
-  // max-width: 720px;
   margin: 0 auto;
 
   &__title {
@@ -27,9 +24,6 @@
   }
 
   &__form {
-    // max-width: 720px;
-    // width: 100% !important;
-    // max-width: 527px !important;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -38,7 +32,6 @@
 
     &_inputWrapper {
       position: relative;
-      // width: 527px;
       width: 100%;
     }
 
@@ -76,9 +69,6 @@
       background: var(--white);
       padding: 18px;
       border: none;
-      // width: 100% !important;
-      // max-width: 527px !important;
-
       box-sizing: border-box;
       outline: none;
       transition: border 0.4s ease;
@@ -139,7 +129,6 @@
       background: var(--white);
       padding: 20px 40px;
       border-radius: 12px;
-      // box-shadow: 0 4px 6px var(--powder);
       text-align: center;
 
       h3 {
@@ -164,24 +153,16 @@
     &__form {
       width: 527px;
 
-      &_inputWrapper {
-        //  position: relative;
-        // width: 527px;
-        //  width: 100%;
-      }
-
       &_date {
         width: 527px;
       }
     }
-
   }
 }
 
 @media screen and (min-width: 860px) {
   .booking {
     padding: 40px;
-    // flex: 1;
 
     &__form {
       width: 420px;
@@ -191,8 +172,6 @@
       }
     }
   }
-
-
 }
 
 @media screen and (min-width: 1280px) {
@@ -200,16 +179,9 @@
     &__form {
       width: 600px;
 
-      &_inputWrapper {
-        //  position: relative;
-        // width: 527px;
-        //  width: 100%;
-      }
-
       &_date {
         width: 600px;
       }
     }
-
   }
 }
