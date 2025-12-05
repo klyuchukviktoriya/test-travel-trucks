@@ -24,7 +24,10 @@ export default function Truck({ truck }) {
 
   return (
     <div className={css.truck}>
-      <img className={css.truck__img} src={galleryImage} alt={truck.name} />
+      <div className={css.truck__img}>
+        <img src={galleryImage} alt={truck.name} />
+      </div>
+
       <div className={css.truck__info}>
         <div className={css.truck__head}>
           <div className={css.truck__headUp}>

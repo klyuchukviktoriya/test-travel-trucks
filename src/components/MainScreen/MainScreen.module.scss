@@ -5,10 +5,12 @@
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("../../assets/bg-home.webp");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
-  display: flex;
+
 
   .container {
+    min-height: calc(100vh - 88px);
     padding: 120px 24px;
     color: var(--light);
     text-align: center;
@@ -36,6 +38,13 @@
 
 @media screen and (min-width: 768px) {
   .main {
+    min-height: calc(100vh - 88px);
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+      url("../../assets/bg-home-tab.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
     .container {
       align-items: flex-start;
       padding: 260px 64px;
@@ -54,6 +63,8 @@
     min-height: calc(100vh - 88px);
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url("../../assets/bg-home.webp");
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 }

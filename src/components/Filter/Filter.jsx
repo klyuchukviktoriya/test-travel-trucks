@@ -126,7 +126,6 @@ export default function Filter({ onApplyFilters }) {
           placeholder="City"
           className={css.loc__input}
           onClick={handleInputClick}
-          // onFocus={handleInputClick}
           onBlur={() => setTimeout(() => setSuggestionsVisible(false), 500)}
         />
         <svg
@@ -155,7 +154,6 @@ export default function Filter({ onApplyFilters }) {
         <h4 className={css.filter__title}>Filters</h4>
         <div>
           <h3>Vehicle equipment</h3>
-          <div className={css.filterLine}></div>
           <div className={css.filters__icons}>
             {Object.keys(equipmentLabels).map(key => (
               <Button
